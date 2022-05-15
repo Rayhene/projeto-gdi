@@ -1,0 +1,75 @@
+USE db_gamestore
+
+
+CREATE TABLE tbl_UsuarioConta(
+Tag_Conta SMALLINT PRIMARY KEY IDENTITY(100, 1), 
+Email_Conta VARCHAR(50) NOT NULL UNIQUE,
+Nome_Conta VARCHAR(50) NOT NULL,
+Nick_Name VARCHAR(50) NOT NULL UNIQUE,
+End_Conta VARCHAR(100) NOT NULL,
+Saldo_Conta DECIMAL DEFAULT 0
+)
+
+CREATE TABLE tbl_Amizade(
+Amigo_A SMALLINT NOT NULL,
+Amigo_B SMALLINT NOT NULL
+CONSTRAINT pk_Amigo_AB PRIMARY KEY (Amigo_A, Amigo_B),
+CONSTRAINT fk_Amigo_A FOREIGN KEY (Amigo_A)
+REFERENCES tbl_UsuarioConta,
+CONSTRAINT fk_Amigo_B FOREIGN KEY (Amigo_B)
+REFERENCES tbl_UsuarioConta
+)
+
+CREATE TABLE tbl_Distribuidora(
+CNPJ_Dist VARCHAR(18) NOT NULL PRIMARY KEY,
+Nome_Dist VARCHAR(50) NOT NULL,
+End_Dist VARCHAR(100)
+)
+
+CREATE TABLE tbl_Jogos(
+Cod_Jogo SMALLINT PRIMARY KEY IDENTITY,
+Titulo_Jogo VARCHAR(50) NOT NULL,
+Avalia_Jogo DECIMAL, --avaliação
+Lanca_Jogo DATE, --lançamento
+Preco_Jogo DECIMAL NOT NULL
+)
+
+CREATE TABLE tbl_Genero(
+Cod_Jogo SMALLINT NOT NULL,
+CNPJ VARCHAR(18) NOT NULL,
+Genero VARCHAR(50) NOT NULL
+CONSTRAINT fk_Cod_Jogo_Gen FOREIGN KEY(Cod_Jogo)
+REFERENCES tbl_Jogos(Cod_Jogo),
+CONSTRAINT fk_CNPJ_Dis_Gen FOREIGN KEY(CNPJ)
+REFERENCES tbl_Distribuidora(CNPJ_Dist),
+)
+
+CREATE TABLE tbl_UsuarioBibli(
+Email_Conta VARCHAR(50),
+Titulo_Jogo VARCHAR(50), 
+CNPJ VARCHAR(18) NOT NULL,
+Cod_Jogo SMALLINT NOT NULL,
+CONSTRAINT fk_Email_Conta_Bib FOREIGN KEY(Email_Conta)
+REFERENCES tbl_UsuarioConta(Email_Conta), 
+CONSTRAINT fk_CNPJ_Dis_Bib FOREIGN KEY(CNPJ)
+REFERENCES tbl_Distribuidora(CNPJ_Dist),
+CONSTRAINT fk_Cod_Jogo_Bib FOREIGN KEY(Cod_Jogo)
+REFERENCES tbl_Jogos(Cod_Jogo)
+)
+
+CREATE TABLE tbl_Promocao(
+Cod_Prom SMALLINT NOT NULL PRIMARY KEY IDENTITY,
+Desconto_Prom DECIMAL NOT NULL DEFAULT 0
+)
+
+CREATE TABLE tbl_Compra(
+Tag_Conta SMALLINT NOT NULL,
+Cod_Jogo SMALLINT NOT NULL,
+Cod_Prom SMALLINT NOT NULL,
+CONSTRAINT fk_Tag_Conta_Compra FOREIGN KEY(Tag_Conta)
+REFERENCES tbl_UsuarioConta(Tag_Conta),
+CONSTRAINT fk_Cod_Jogo_Compra FOREIGN KEY(Cod_Jogo)
+REFERENCES tbl_Jogos(Cod_Jogo),
+CONSTRAINT fk_Cod_Prom_Compra FOREIGN KEY(Cod_Prom)
+REFERENCES tbl_Promocao(Cod_Prom)
+)
