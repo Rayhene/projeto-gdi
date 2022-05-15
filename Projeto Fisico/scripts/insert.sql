@@ -1,0 +1,17 @@
+INSERT INTO tbl_UsuarioConta(Email_Conta, Nome_Conta, Nick_name, End_Conta)VALUES('murilo.francisco.damata@formulaweb.com.br','Murilo Francisco da Mata','Murilao', 'Rua Shinsei Kamida - 486')
+INSERT INTO tbl_UsuarioConta(Email_Conta, Nome_Conta, Nick_name, End_Conta)VALUES('rrda@cin.ufpe.br','Rayhene Ranuzia Dantas de Arruda','Rayhene', 'Rua das Flores - 425')
+INSERT INTO tbl_UsuarioConta(Email_Conta, Nome_Conta, Nick_name, End_Conta)VALUES('caue-assis85@comanzzaindaia.com.br', 'Cauê Elias Ryan Assis','Caue55', 'Rua N - 237')
+INSERT INTO tbl_UsuarioConta(Email_Conta, Nome_Conta, Nick_name, End_Conta)VALUES('bernardo_raimundo_daconceicao@dglnet.com.br','Bernardo Raimundo da Conceição','Raimundo123', 'Rua José Belfort Filho - 990')
+INSERT INTO tbl_UsuarioConta(Email_Conta, Nome_Conta, Nick_name, End_Conta)VALUES('ruan_marcelo_dossantos@domain.com.br','Ruan Marcelo dos Santos','Ruan777', 'Rua Ariodante Zardo 749')
+
+INSERT INTO tbl_Distribuidora(CNPJ_Dist, Nome_Dist, End_Dist)VALUES('74.031.120/0001-92', 'VanZealous', 'Rua Imperador Lopo, 908')
+INSERT INTO tbl_Distribuidora(CNPJ_Dist, Nome_Dist, End_Dist)VALUES('88.867.238/0001-60', 'CleoComet', 'Av. Governador Antonio, 456')
+INSERT INTO tbl_Distribuidora(CNPJ_Dist, Nome_Dist, End_Dist)VALUES('31.238.297/0001-51', 'ZeacomEtus', 'Rua Marina Veloso, 8900')
+INSERT INTO tbl_Distribuidora(CNPJ_Dist, Nome_Dist, End_Dist)VALUES('48.128.436/0001-97', 'Zealouschenko', 'Rua Almirante Taylor, 1234')
+INSERT INTO tbl_Distribuidora(CNPJ_Dist, Nome_Dist, End_Dist)VALUES('18.385.270/0001-23', 'Cometkun', 'Av. Engenho do Meio, 098')
+
+INSERT INTO tbl_Jogos(Titulo_Jogo, Avalia_Jogo, Lanca_Jogo, Preco_Jogo)VALUES('Undertale', 4.9, '2015-09-15', 19.99)
+INSERT INTO tbl_Jogos(Titulo_Jogo, Avalia_Jogo, Lanca_Jogo, Preco_Jogo)VALUES('Skyrim', 5, '2011-11-11', 149.00)
+INSERT INTO tbl_Jogos(Titulo_Jogo, Avalia_Jogo, Lanca_Jogo, Preco_Jogo)VALUES('Grand Theft Auto V', 4.7, '2004-10-26', 69.99)
+INSERT INTO tbl_Jogos(Titulo_Jogo, Avalia_Jogo, Lanca_Jogo, Preco_Jogo)VALUES('Cuphead', 4.5, '2017-09-29', 36.99)
+INSERT INTO tbl_Jogos(Titulo_Jogo, Avalia_Jogo, Lanca_Jogo, Preco_Jogo)VALUES('Hollow Knight', 4.7, '2017-02-24', 27.99)
