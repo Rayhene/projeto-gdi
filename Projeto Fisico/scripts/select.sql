@@ -6,6 +6,13 @@ ON J.CNPJ = D.CNPJ
 GROUP BY D.Nome
 HAVING COUNT(J.Cod) > 1;
 
+
+SELECT C.NICK, COUNT(J.Titulo)
+FROM tbl_UsuarioConta C INNER JOIN tbl_Compra P ON C.Tag = P.Tag
+INNER JOIN tbl_Jogos J ON (P.CNPJ = J.CNPJ AND P.COD = J.COD)
+GROUP BY C.NICK
+
+
 --JUNÇÃO INTERNA
 --Projeta jogos e sua distribuidora
 SELECT J.Titulo, D.Nome
